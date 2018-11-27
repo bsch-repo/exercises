@@ -5,20 +5,32 @@ import java.util.Scanner;
 
 public class Exercise_2 {
 
-    static void toBinary() throws InputMismatchException {
+    static long a = 0;
+    static long b = 0;
+    static long result = 0;
 
-        Scanner reader = new Scanner(System.in);
-        reader.useRadix(2);
+    static long toBinary() {
 
-        long a = reader.nextLong();
-        long b = reader.nextLong();
-        long result = a+b;
+        boolean correctInput = false;
 
-        System.out.println(Long.toBinaryString(result));
+        while (!correctInput) {
+            Scanner reader = new Scanner(System.in);
+            reader.useRadix(2);
 
+            try {
+                a = reader.nextLong();
+                b = reader.nextLong();
+                correctInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Incorrect input format. Use binary system.");
+                correctInput = false;
+            }
+        }
+
+        return result = a + b;
     }
 
     public static void main(String[] args) {
-        toBinary();
+        System.out.println(Long.toBinaryString(toBinary()));
     }
 }
