@@ -1,23 +1,29 @@
 package main;
 
+import java.util.ArrayList;
+
 public class BinaryServiceProvider {
 
-    private int x = 0;
-    private int y = 0;
-    private int carry = 0;
+    private static ArrayList<Integer> binaryNumber = new ArrayList<>();
 
-    private static int[] binaryNumber = new int[10];
+    public static void convertToBinary(int unconvertedNumber) {
 
-    public void convertToBinary(int unconvertedNumber) {
+        int remainder = 0;
 
-        for (;;) {
-
+        while (!(unconvertedNumber == 0)){
+            System.out.println(unconvertedNumber);
+            remainder = unconvertedNumber % 2;
+            unconvertedNumber /= 2;
+            binaryNumber.add(remainder);
         }
     }
 
     public static void displayBinary() {
-        for (int i = 0; i < binaryNumber.length; i++) {
-            System.out.print(binaryNumber[i]);
+
+        System.out.println(binaryNumber.isEmpty());
+
+        for (int i = binaryNumber.size()-1; i >= 0; i--) {
+            System.out.print(binaryNumber.get(i));
         }
 
     }

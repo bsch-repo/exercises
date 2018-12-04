@@ -34,6 +34,7 @@ public class BinaryMath {
 
     public static void main(String[] args) {
 //        System.out.println("Binary addition result: " + Long.toBinaryString(toBinary()));
+        BinaryServiceProvider.convertToBinary(20);
         BinaryServiceProvider.displayBinary();
     }
 }
