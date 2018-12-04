@@ -3,7 +3,7 @@ package main;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Exercise_2 {
+public class BinaryMath {
 
     static long a = 0;
     static long b = 0;
@@ -22,7 +22,9 @@ public class Exercise_2 {
                 b = reader.nextLong();
                 correctInput = true;
             } catch (InputMismatchException e) {
+
                 System.out.println("Incorrect input format. Use binary system.");
+
                 correctInput = false;
             }
         }
@@ -31,6 +33,7 @@ public class Exercise_2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Long.toBinaryString(toBinary()));
+//        System.out.println("Binary addition result: " + Long.toBinaryString(toBinary()));
+        BinaryServiceProvider.displayBinary();
     }
 }
