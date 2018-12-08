@@ -34,8 +34,8 @@ public class Binary {
 
     }
 
-    public static void addBinary(ArrayList<Integer> BinaryA, ArrayList<Integer> BinaryB) {
-        boolean carry = false;
+    public static void addBinary(ArrayList<Integer> BinaryA, ArrayList<Integer> BinaryB, ArrayList<Integer> targetBinary) {
+        boolean carryFlag = false;
 
         // check which binary number is smaller and fill smaller with 0
         if (BinaryA.size() > BinaryB.size()) {
@@ -48,20 +48,18 @@ public class Binary {
             }
         }
 
-
-
         for (int i = 0; i < BinaryA.size(); i++) {
 
             switch (BinaryA.get(i) + BinaryB.get(i)) {
                 case 0:
-                    resultBinary.add(i, carry ? 1 : 0);
+                    targetBinary.add(carryFlag ? 1 : 0);
                     break;
                 case 1:
-                    resultBinary.add(i, carry ? 1 : 1);
+                    targetBinary.add(carryFlag ? 1 : 1);
                     break;
                 case 2:
-                    resultBinary.add(i, carry ? 1 : 0);
-                    carry = true;
+                    targetBinary.add(carryFlag ? 1 : 0);
+                    carryFlag = true;
                     break;
             }
         }

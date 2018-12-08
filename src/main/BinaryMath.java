@@ -10,7 +10,7 @@ public class BinaryMath {
         Binary.displayBinary(Binary.binaryNumberB);
 
         System.out.println("\n\nBinary addition result: ");
-        Binary.addBinary(Binary.binaryNumberA, Binary.binaryNumberB);
+        Binary.addBinary(Binary.binaryNumberA, Binary.binaryNumberB, Binary.resultBinary);
 
         System.out.println("\n\nFirst converted number: ");
         Binary.displayBinary(Binary.binaryNumberA);
