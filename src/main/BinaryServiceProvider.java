@@ -4,26 +4,29 @@ import java.util.ArrayList;
 
 public class BinaryServiceProvider {
 
-    private static ArrayList<Integer> binaryNumber = new ArrayList<>();
+    public static ArrayList<Integer> binaryNumberA = new ArrayList<>();
+    public static ArrayList<Integer> binaryNumberB = new ArrayList<>();
 
-    public static void convertToBinary(int unconvertedNumber) {
+    public static void convertToBinary(int unconvertedNumber, ArrayList<Integer> targetBinary) {
 
         int remainder = 0;
+        System.out.println("Converted number: " + unconvertedNumber);
 
         while (!(unconvertedNumber == 0)){
-            System.out.println(unconvertedNumber);
             remainder = unconvertedNumber % 2;
             unconvertedNumber /= 2;
-            binaryNumber.add(remainder);
+            targetBinary.add(remainder);
         }
     }
 
-    public static void displayBinary() {
+    public static void displayBinary(ArrayList<Integer> targetBinary) {
 
-        System.out.println(binaryNumber.isEmpty());
+//      System.out.println(binaryNumberA.isEmpty());
 
-        for (int i = binaryNumber.size()-1; i >= 0; i--) {
-            System.out.print(binaryNumber.get(i));
+        System.out.print("Conversion result: ");
+
+        for (int i = targetBinary.size()-1; i >= 0; i--) {
+            System.out.print(targetBinary.get(i));
         }
 
     }
