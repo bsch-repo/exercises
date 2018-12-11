@@ -4,9 +4,9 @@ public class BinaryMath {
 
     public static void main(String[] args) {
 //        System.out.println("Binary addition result: " + Long.toBinaryString(toBinary()));
-        Binary.convertToBinary(20, Binary.binaryNumberA);
+        Binary.convertToBinary(26, Binary.binaryNumberA);
         Binary.displayBinary(Binary.binaryNumberA);
-        Binary.convertToBinary(5, Binary.binaryNumberB);
+        Binary.convertToBinary(47, Binary.binaryNumberB);
         Binary.displayBinary(Binary.binaryNumberB);
 
         System.out.println("\n\nBinary addition result: ");

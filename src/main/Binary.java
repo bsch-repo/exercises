@@ -56,6 +56,7 @@ public class Binary {
             switch (BinaryA.get(i) + BinaryB.get(i)) {
                 case 0:
                     targetBinary.add(carryFlag ? 1 : 0);
+                    carryFlag = false;
                     break;
                 case 1:
                     targetBinary.add(carryFlag ? 0 : 1);
