@@ -36,22 +36,8 @@ public class Binary {
 
     public static void addBinary(ArrayList<Integer> BinaryA, ArrayList<Integer> BinaryB, ArrayList<Integer> targetBinary) {
         boolean carryFlag = false;
-        int biggerBinary = 0;
 
-        // check which binary number is smaller and fill smaller with 0
-        if (BinaryA.size() > BinaryB.size()) {
-            biggerBinary = BinaryA.size();
-            for (int i = (BinaryA.size() - (BinaryA.size()- BinaryB.size())); i < BinaryA.size(); i++) {
-                BinaryB.add(i, 0);
-            }
-        } else {
-            biggerBinary = BinaryB.size();
-            for (int i = (BinaryB.size() - (BinaryB.size()- BinaryA.size())); i < BinaryB.size(); i++) {
-                BinaryA.add(i, 0);
-            }
-        }
-
-        for (int i = 0; i < biggerBinary; i++) {
+        for (int i = 0; i < Binary.getBiggerBinary(BinaryA, BinaryB); i++) {
 
             switch (BinaryA.get(i) + BinaryB.get(i)) {
                 case 0:
@@ -74,8 +60,28 @@ public class Binary {
 
         displayBinary(resultBinary);
     }
-}
 
-//if (BinaryA.get(i) > BinaryB.get(i)) {
-//        resultBinary.add(BinaryA.get(i));
-//        }
+    public static int getBiggerBinary(ArrayList<Integer> BinaryA, ArrayList<Integer> BinaryB) {
+        int biggerBinary = 0;
+
+        // check which binary number is smaller and fill smaller with 0
+        if (BinaryA.size() > BinaryB.size()) {
+            biggerBinary = BinaryA.size();
+            for (int i = (BinaryA.size() - (BinaryA.size()- BinaryB.size())); i < BinaryA.size(); i++) {
+                BinaryB.add(i, 0);
+            }
+        } else {
+            biggerBinary = BinaryB.size();
+            for (int i = (BinaryB.size() - (BinaryB.size()- BinaryA.size())); i < BinaryB.size(); i++) {
+                BinaryA.add(i, 0);
+            }
+        }
+
+        return biggerBinary;
+    }
+
+    public static void multiplybinary(ArrayList<Integer> BinaryA, ArrayList<Integer> BinaryB, ArrayList<Integer> targetBinary) {
+
+    }
+
+}
